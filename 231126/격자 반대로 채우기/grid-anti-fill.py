@@ -5,24 +5,45 @@ answer=[
 ]
 
 count=1
-for start_col in range(n-1,-1,-1):
-    curr_col=start_col
-   
-    if start_col%2!=0:
-        curr_row=n-1
-        while 0<=curr_col and curr_row >= 0:
-            answer[curr_row][curr_col]=count
 
-            curr_row-=1
-            count+=1
+if n%2==0:
+    for start_col in range(n-1,-1,-1):
+        curr_col=start_col
+    
+        if start_col%2!=0:
+            curr_row=n-1
+            while 0<=curr_col and curr_row >= 0:
+                answer[curr_row][curr_col]=count
 
-    else :
-        curr_row=0
-        while 0<=curr_col and curr_row < n:
-            answer[curr_row][curr_col]=count
+                curr_row-=1
+                count+=1
 
-            curr_row+=1
-            count+=1
+        else :
+            curr_row=0
+            while 0<=curr_col and curr_row < n:
+                answer[curr_row][curr_col]=count
+
+                curr_row+=1
+                count+=1
+else:
+     for start_col in range(n-1,-1,-1):
+        curr_col=start_col
+    
+        if start_col%2==0:
+            curr_row=n-1
+            while 0<=curr_col and curr_row >= 0:
+                answer[curr_row][curr_col]=count
+
+                curr_row-=1
+                count+=1
+
+        else :
+            curr_row=0
+            while 0<=curr_col and curr_row < n:
+                answer[curr_row][curr_col]=count
+
+                curr_row+=1
+                count+=1
    
 for r in range(n):
     for c in range(n):
